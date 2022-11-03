@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carrito</title>
+        <title>Login</title>
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
         <!-- Favicon -->
-        <link rel="shortcut icon" href="../public/images/logo-brainhub-favicon.jpg">
+        <link rel="shortcut icon" href="logo-brainhub-favicon.jpg">
         <style>
             /* HEADER */
 
@@ -392,138 +392,151 @@ div#carrito-icon{
 
 }
 
-
-body {
-    width: 100%;
+li {
+    list-style: none;
 }
 
-main.main_cart {
-    background-color: #D4ECDD;
-    height: 100%;
-    width: 100%;
-    margin-top: 80px;
+a {
+    text-decoration: none;
+}
+
+body.login_body {
+    padding-top: 6rem;
+   
+}
+
+/*  FORM  */
+
+section.container-login form a {
+    color: rgb(34, 34, 182);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+section.container-login {
+    padding: 1rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-}
-    
-main.main_cart h2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    font-size: 2.3rem;
-}
-    
-main.main_cart p.cantidad {
-    margin-top: 20px;
-    margin-left: 65px;
-    margin-bottom: 10px;
-}
-    
-main.main_cart article {
     align-items: center;
-    box-sizing: border-box;
-    margin: 0 auto 30px;
-    position: relative;
-    background-color: white;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    justify-content: center;
-    width: 400px;
+    max-width: 400px;
+    margin: 0 auto;
 }
-    
-main.main_cart article div.carrito-cursos {
-    width: 100%;
-}
-    
-main.main_cart article picture img {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-main.main_cart .carrito-price {
-    width: 250px;
-    margin-top: 50px;
-    margin-left: 30px;
-    display:block;
-    color: #0a8010;
-    font-weight: bold;
-}
-
-
-button.comprar {
-    padding: 10px;
-    cursor: pointer;
-    color: black;
-    background-color: rgb(240, 180, 16) ;
-    font-weight: 900;
-    border-radius: 15px;
-    z-index: 1;
-    font-size: 18px;
-    width: 250px;
-    box-shadow: 5px 10px 15px black;
-    margin: 60px;
-}
-
-button.comprar:hover{
-    background-color: #0de761;
-    transition: 1s;
-}
-
-.trashcan {
-    display: flex;
-    position: absolute;
-    top: 345px;
-    right: 50px;
-    cursor: pointer;
-}
-
-div.total-amount {
-    display: flex;
-    border: #000;
-    border-radius: 15px;
+section.container-login h2 {
+    margin-bottom: 20px;
     text-align: center;
+    width: 100%;
+}
+
+section.container-login div.lineal {
+    display: flex;
     justify-content: center;
-    font-weight: 400;
+    margin-bottom: 5px;
+    width: 100%;
 }
 
-
-@media (min-width: 1024px) {
-    main.main_cart article {
-        align-items: center;
-        margin: 0 auto 30px;
-        position: relative;
-        background-color: white;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        justify-content: center;
-        width: 90%;
-    }
-
-    button.comprar {
-        margin: 60px;
-        justify-content: center;
-    }
-
-    .trashcan {
-        top: 20px;
-        right: 30px;
-    }
-
-    main.main_cart .carrito-price {
-        width: 250px;
-        margin-top: 30px;
-        margin-left: 30px;
-        display:block;
-        color: #0a8010;
-        font-weight: bold;
-    }
-
-    main.main_cart article picture img {
-        width: 300px;
-    }
+section.container-login div.lineal .line-one {
+    height: 3px;
+    left: 0%;
+    width: 47%;
+    background-color: black;
+    margin-top: 8px;
+    border: none;
 }
 
+section.container-login div.lineal .line-two {
+    height: 3px;
+    right: 0%;
+    width: 47%;
+    background-color: black;
+    margin-top: 8px;
+    border: none;
+}
+
+section.container-login .lineal .separator {
+    padding: 0 5px;
+    font-weight: 600;
+}
+
+section.container-login .container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+section.container-login .btn {
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+}
+
+section.container-login .container-form .btn-log:hover {
+    background: linear-gradient(225deg, #cc245c, #ccf000);
+    box-shadow:  0 5px 5px grey;
+    font-size: 20px;
+}
+
+section.container-login .btn-log-facebook {
+    background-color: #335089;
+    color: white;
+}
+
+section.container-login .btn-log-google {
+    background-color: #A8B8BF;
+    color: white;
+}
+
+section.container-login .container-form .btn-log {
+    background-color: #98CA3F;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+section.container-login .container-form .btn-register {
+    border: solid 2px #263CFF;
+    color: #263CFF;
+    background-color: white;
+    margin-top: 8px;
+    height: 37px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+section.container-login .container-form .btn-register:hover{
+    border-radius: 5px;
+    color: white;
+    background-color: #263CFF;
+}
+
+section.container-login .input-container {
+    width: 100%;
+}
+
+section.container-login .container-form .input-log {
+    height: 50px;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+}
+
+section.container-login .container-form .check-remember {
+    margin-top: 1rem;
+}
+
+section.container-login .container-form p.link_pass-recover {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+a.registro{
+    font-size: 24;
+    color: green;
+}
 
 /* FOOTER */
 
@@ -613,116 +626,110 @@ footer{
 }
         </style>
     </head>
-<body>
-    <header class="header">
-        <nav>
-            <div><input type="checkbox" id="menu-burger"></div>
-            <label for="menu-burger" class="bar-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul class="burger-display">
-                <li><a class="active" href="#" target="_self">INICIO</a></li>
-                <li><a href="">CATEGORÍAS</a></li>
-                <li><a href="">CONTACTO</a></li>
-            </ul>
-        </nav>
-        <div class="logo"> <a href="/"><img src="../../public/images/logo-brainhub.jpg" alt="Logo Brainhub" id="logo"></a></div>
-        <div class="buscador">
-            <form action="/search" method="GET" class="search-form">
-                <input type="text" name="search" placeholder="Buscar cursos" class="search-input active">
-                <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+    <body class="login_body">
+        <header class="header">
+            <nav>
+                <div><input type="checkbox" id="menu-burger"></div>
+                <label for="menu-burger" class="bar-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul class="burger-display">
+                    <li><a class="active" href="index.html" target="_self">INICIO</a></li>
+                    <li><a href="">CATEGORÍAS</a></li>
+                    <li><a href="">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="logo"> <a href="index.html"></a><img src="logo-brainhub.jpg" alt="Logo Brainhub" id="logo"></a></div>
+            <div class="buscador">
+                <form action="" method="GET" class="search-form">
+                    <input type="text" name="search" placeholder="Buscar cursos" class="search-input active">
+                    <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item"> <a href="index.html">INICIO</a>
+                    </li>
+                    <li class="menu-item">CATEGORIAS
+                        <ul class="submenu">
+                            <li><a href="">IDIOMAS</a></li>
+                            <li><a href="">PROGRAMACIÓN</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"> <a href="#brainhub-about"> ACERCA DE </a></li>
+                </ul>
+            </nav>
+            <div id="carrito-icon"><a href="productCart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <li><a href="">PERFIL</a></li>
+                <li><a href="">Admin</a></li>
+            <div class="user"> <a href="login.html"> LOGIN </a></div>
+            <div class="header_avatar">
+                    <div class="avatar_session"></div>
+                    <img src="ddd.png" alt="">
+            </div>
+        </header>
+        <section class="container-login">
+            <h2 class="title">Iniciar sesión</h2>
+            <button class="btn-log-facebook btn"> <a href="https://facebook.com">Inicia sesión con Facebook</a> </button>
+            <button class="btn-log-google btn">Inicia sesión con Google</button>
+            <form class="container-form" action="/users/login" method="POST" id="form">
+                <div class="input-container">
+                    <input class="input-log" type="email" class="input-style" id ="email" name="email"  placeholder="Ingrese su email">
+                    <span class="error" id="emailErrors" style="color: red;"></span>
+
+                    <input class="input-log" type="password" name="pass" id ="pass" placeholder="Ingrese su contraseña">
+                    <span id="passErrors" style="color: red;"></span>
+                    
+                </div>
+                
+                <div class="check-remember">
+                    <label for="remember">Recordar<input type="checkbox" name="remember" id="remember"></label>
+                </div>
+                <button type="submit" class="btn btn-log">Ingresar</button>
+                <span class="error" id="submitErrors" style="color: red;"></span>
+                <p class="link_pass-recover"><a href="">¿Olvidaste tu contraseña?</a></p>
+                <p>¿Aún no tienes cuenta en BrainHub?</p>
+                <a class="registro" href="register.html">Registrate!</a>
             </form>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li class="menu-item"> <a href="/">INICIO</a>
-                </li>
-                <li class="menu-item">CATEGORIAS
-                    <ul class="submenu">
-                        <li><a href="">IDIOMAS</a></li>
-                        <li><a href="">PROGRAMACIÓN</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item"> <a href=""> ACERCA DE </a></li>
-            </ul>
-        </nav>
-        <div id="carrito-icon"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></div>
-            <li><a href="">PERFIL</a></li>
-            <li><a href="">Admin</a></li>
-        <div class="user"> <a href="/users/login"> LOGIN </a></div>
-        <div class="header_avatar">
-                <div class="avatar_session"></div>
-                <img src="../../public/images/avatar/ddd.png" alt="">
-        </div>
-    </header>
-    <main class="main_cart">
-        <div>
-            <h2>Carrito de compras</h2>
-            <p class="cantidad">2 cursos en el carrito</p>
-            <article>
-                <picture class="carrito-img"><img src="../../public/images/curso-english1.jpg" alt=""></picture>
-                <div>
-                    <h3 class="carrito-cursos">Curso Completo de Inglés: Iniciación</h3>
+        </section>
+        <footer>
+            <div class="container__footer">
+                <div class="article_footer">
+                    <div class="footer-logo">
+                        <img src="logo-brainhub.jpg" alt="logo BrainHub">
+                    </div>
                 </div>
-                <p class="carrito-description">Curso completo de inglés para dominar la gramática, traducción,
-                    conversación, vocabulario, pronunciación y mucho más.</p>
-                <span class="trashcan"><i class="fa-solid fa-trash-can"></i></span>
-                <p class="carrito-price">ARS$3000</p>
-            </article>
-            <article>
-                <picture class="carrito-img"><img src="../../public/images/curso-chino1.jpg" alt=""></picture>
-                <div>
-                    <h3 class="carrito-cursos">Aprender Chino a la primera</h3>
+                <div class="article__footer">
+                    <div class="somos_Brainhub">
+                        <p id="brainhub-about">Somos BrainHub Training, una institución online que se dedica a la enseñanza no convencional. Nos especializamos en la formación de lenguajes tanto clásicos como de tecnología.</p>
+                    </div>
                 </div>
-                <p class="carrito-description">Curso de chino. Empieza desde cero y habla desde el primer vídeo de la
-                    forma más dinámica y divertida.</p>
-                <span class="trashcan"><i class="fa-solid fa-trash-can"></i></span>
-                <p class="carrito-price">ARS$3000</p>
-            </article>
-            <div class="total-amount"><p>TOTAL: ARS$6000</p></div>
-            <div class="contenedor-boton">
-                <button class="comprar"><span>COMPRAR</span></button>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="container__footer">
-            <div class="article_footer">
-                <div class="footer-logo">
-                    <img src="../../public/images/logo-brainhub.jpg" alt="logo BrainHub">
+                <div class="article__footer">
+                    <h2>Enlaces de ayuda</h2>
+                    <a href="">Política de privacidad</a>
+                    <a href="">Términos y condiciones</a>
+                    <a href="">Políticas de cookies</a>
+                    <a href="">Atención al cliente</a>
+                </div>
+                <div class="article__footer">
+                    <h2>Cursos</h2>
+                    <a href="">Idiomas</a>
+                    <a href="">Diseño Web</a>
+                    <a href="">Programación</a>
+                    <a href="">Próximos cursos</a>
+                </div>
+                <div class="article__footer">
+                    <h2>Redes Sociales</h2>
+                    <a href=""> <i class="fab fa-facebook-square"></i> Facebook</a>
+                    <a href=""><i class="fab fa-twitter-square"></i> Twitter</a>
+                    <a href=""><i class="fab fa-linkedin"></i> Linkedin</a>
+                    <a href=""><i class="fab fa-instagram-square"></i> Instagram</a>
                 </div>
             </div>
-            <div class="article__footer">
-                <div class="somos_Brainhub">
-                    <p id="brainhub-about">Somos BrainHub Training, una institución online que se dedica a la enseñanza no convencional. Nos especializamos en la formación de lenguajes tanto clásicos como de tecnología.</p>
-                </div>
+            <div class="copyright">
+                <hr>
+                <p>Marca Registrada © 2022 <b>BrainHub Training</b></p>
             </div>
-            <div class="article__footer">
-                <h2>Enlaces de ayuda</h2>
-                <a href="">Política de privacidad</a>
-                <a href="">Términos y condiciones</a>
-                <a href="">Políticas de cookies</a>
-                <a href="">Atención al cliente</a>
-            </div>
-            <div class="article__footer">
-                <h2>Cursos</h2>
-                <a href="">Idiomas</a>
-                <a href="">Diseño Web</a>
-                <a href="">Programación</a>
-                <a href="">Próximos cursos</a>
-            </div>
-            <div class="article__footer">
-                <h2>Redes Sociales</h2>
-                <a href=""> <i class="fab fa-facebook-square"></i> Facebook</a>
-                <a href=""><i class="fab fa-twitter-square"></i> Twitter</a>
-                <a href=""><i class="fab fa-linkedin"></i> Linkedin</a>
-                <a href=""><i class="fab fa-instagram-square"></i> Instagram</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <hr>
-            <p>Marca Registrada © 2022 <b>BrainHub Training</b></p>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
