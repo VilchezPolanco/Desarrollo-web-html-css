@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../public/images/logo-brainhub-favicon.jpg">
+        <style>
+            /* HEADER */
+
+header {
+    background-color: #345B63;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+    padding: 0.5rem 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    flex-direction: row;
+}
+
+header nav div#carrito-icon {
+    justify-content: center;
+    padding: 1rem;
+}
+
+header .logo {
+    display: flex;
+    border: none;
+    width: 7rem;
+}
+
+header .logo img {
+    width: 120px;
+    display: flex;
+    align-items: center;
+}
+
+header div.user{
+    border: none;
+    width: 4rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 2px;
+    order: 3;
+    transition: all 1s ease-in-out;
+    background-color:#345B63;
+    border-radius: 10px;
+}
+
+header div.user:hover{
+    background-color: #5499daea;
+    box-shadow: 0 5px 5px gray;
+    color: white;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul.burger-display {
+    list-style: none;
+    text-decoration: none;
+    margin-top: 2.7rem;
+    position: fixed;
+    width: 23%;
+    height: 15vh;
+    transition: all .5s;
+    display: none;
+    background-color: #345B63;
+}
+
+header nav ul.burger-display li {
+    padding: 3px;
+}
+
+header nav div input {
+    display: none;
+}
+
+@keyframes fade-in { 
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+header nav ul.burger-display.active {
+    display: flex;
+    opacity: 1;
+    animation: fade-in 1s;
+    top: 30px;
+    font-size: 1rem;
+    margin-left: -10px;
+    padding: 15px;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+header nav label.bar-btn {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in;
+    margin-right: 20px;
+    order:-1;
+}
+
+header nav.menu-burger:hover {
+    background-color: #264349;
+}
+
+/* Search */
+
+.buscador{
+    background-color: white;
+    height: 40px;
+    border-radius: 5px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+
+.buscador form.search-form{
+    display: flex;
+    padding: 5px;
+}
+
+.buscador input{
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 7px 20px 7px 7px;
+    display: none;
+    background: rgba(196, 196, 196, 0.14);
+}
+
+.buscador .search-input{
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 7px 20px 7px 7px;
+    display: none;
+    background: rgba(196, 196, 196, 0.14);
+}
+
+/* .buscador .search-button:hover > .search-input {
+    display: block;
+} */
+
+.buscador .search-input.active{
+    display: block;
+    top: 30;
+}
+
+.buscador input:focus {
+    outline: none;
+}
+.buscador button{
+    background-color: white;
+    border-left: solid 1px white;
+    color: #000;
+    border: none;
+    font-size: 1rem;
+    order: 2;
+}
+
+/* End search */
+
+/* Menu */
+
+header nav ul.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    display: none;
+}
+
+header nav ul.menu li.menu-item{
+    position: relative;
+    margin-top: 4px;
+    margin-right: 13px;
+    margin-left: 15px;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    flex-direction: column;
+}
+
+header ul.submenu {
+    border-radius: 5px;
+    padding: 1rem;
+    list-style: none;
+    background-color:#345B63;
+    position: absolute;
+    display: none;
+}
+
+header nav ul.menu li.menu-item:hover > ul.submenu {
+    display: block;
+}
+
+div#carrito-icon{
+    padding: 5px;
+}
+
+.header_avatar{
+   
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color:#345B63;
+        position: relative;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        
+}
+.avatar_session {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(15, 255, 27);
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+}
+
+.header_avatar img{
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* END HEADER */
+
+@media screen and (min-width: 768px){
+    .logo {
+        margin-left: 0;
+    }
+    nav {
+        height: 100px;
+    }
+    
+    .burger-display {
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 50px;
+    }
+    .burger-display li {
+        display: inline-block;
+        margin: 20px;
+        transition: none;
+    }
+    .burger-display li a {
+        font-size: 12px;
+    }
+
+    header nav div#carrito-icon {
+        justify-content: center;
+        order: 2;
+    }
+
+    header nav ul.menu {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    header nav label.bar-btn {
+        display: none;
+    }
+
+    header .menu-item-admin {
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 300px;
+        margin-right: 160px;
+    }
+
+    .buscador {
+        padding: 5px;
+    }
+    
+    .buscador input{
+        border: #000;
+    }
+
+    .buscador form.search-form{
+        display: flex;
+        padding: 5px;
+    }
+
+    .buscador button {
+        border-radius: 5px;
+        background-color: white;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    header nav.header-admin{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    header nav label.bar-btn {
+        display: none;
+    }
+
+    header nav ul.menu-admin {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .buscador {
+        width: 15rem;
+    }
+
+
+    .buscador .search-input{
+        display: block;
+        border: #000;
+    }
+
+    .buscador button {
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .logo {
+        order: 0;
+        margin-left: -50px;
+    }
+
+    header .logo img {
+        width: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    header .menu-item-admin {
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 150px;
+        margin-right: 130px;
+    }
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body.login_body {
+    padding-top: 6rem;
+   
+}
+
+/*  FORM  */
+
+section.container-login form a {
+    color: rgb(34, 34, 182);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+section.container-login {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+section.container-login h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+section.container-login div.lineal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+section.container-login div.lineal .line-one {
+    height: 3px;
+    left: 0%;
+    width: 47%;
+    background-color: black;
+    margin-top: 8px;
+    border: none;
+}
+
+section.container-login div.lineal .line-two {
+    height: 3px;
+    right: 0%;
+    width: 47%;
+    background-color: black;
+    margin-top: 8px;
+    border: none;
+}
+
+section.container-login .lineal .separator {
+    padding: 0 5px;
+    font-weight: 600;
+}
+
+section.container-login .container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+section.container-login .btn {
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+}
+
+section.container-login .container-form .btn-log:hover {
+    background: linear-gradient(225deg, #cc245c, #ccf000);
+    box-shadow:  0 5px 5px grey;
+    font-size: 20px;
+}
+
+section.container-login .btn-log-facebook {
+    background-color: #335089;
+    color: white;
+}
+
+section.container-login .btn-log-google {
+    background-color: #A8B8BF;
+    color: white;
+}
+
+section.container-login .container-form .btn-log {
+    background-color: #98CA3F;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+section.container-login .container-form .btn-register {
+    border: solid 2px #263CFF;
+    color: #263CFF;
+    background-color: white;
+    margin-top: 8px;
+    height: 37px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+section.container-login .container-form .btn-register:hover{
+    border-radius: 5px;
+    color: white;
+    background-color: #263CFF;
+}
+
+section.container-login .input-container {
+    width: 100%;
+}
+
+section.container-login .container-form .input-log {
+    height: 50px;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+}
+
+section.container-login .container-form .check-remember {
+    margin-top: 1rem;
+}
+
+section.container-login .container-form p.link_pass-recover {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    padding: 10px 0px;
+    background: #345B63;
+    margin: 0;
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    margin-top: 10px;
+}
+
+
+.article__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.article__footer .footer-logo img{
+    width: 100px;
+    margin-bottom: 0px;
+    
+}
+
+.article__footer .somos_Brainhub{
+    max-width: 280px;
+    font-weight: 500;
+    color: black;
+    font-size: 18px;
+    padding-top: 0px;
+}
+
+.article__footer h2{
+    margin-bottom: 30px;
+    color: black;
+    font-weight: 700;
+}
+
+.article__footer a{
+    margin-top: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.article__footer a:hover{
+    opacity: 0.8;
+    color: plum;
+}
+
+.article__footer a .fab{
+    font-size: 20px;
+}
+
+.copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.copyright p{
+    margin-top: 20px;
+    color: lightgrey;
+}
+
+.copyright hr{
+    border: none;
+    height: 1px;
+    background-color: black;
+}
+
+/* END FOOTER */
+
+@media (min-width:768px) {
+    footer{
+        flex-wrap: wrap;
+        display: inline-block;
+    }
+}
+        </style>
+    </head>
+    <body class="login_body">
+        <header class="header">
+            <nav>
+                <div><input type="checkbox" id="menu-burger"></div>
+                <label for="menu-burger" class="bar-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul class="burger-display">
+                    <li><a class="active" href="#" target="_self">INICIO</a></li>
+                    <li><a href="">CATEGORÍAS</a></li>
+                    <li><a href="">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="logo"> <a href="/"><img src="../../public/images/logo-brainhub.jpg" alt="Logo Brainhub" id="logo"></a></div>
+            <div class="buscador">
+                <form action="" method="GET" class="search-form">
+                    <input type="text" name="search" placeholder="Buscar cursos" class="search-input active">
+                    <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item"> <a href="/">INICIO</a>
+                    </li>
+                    <li class="menu-item">CATEGORIAS
+                        <ul class="submenu">
+                            <li><a href="">IDIOMAS</a></li>
+                            <li><a href="">PROGRAMACIÓN</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"> <a href="#brainhub-about"> ACERCA DE </a></li>
+                </ul>
+            </nav>
+            <div id="carrito-icon"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <li><a href="">PERFIL</a></li>
+                <li><a href="">Admin</a></li>
+            <div class="user"> <a href="/users/login"> LOGIN </a></div>
+            <div class="header_avatar">
+                    <div class="avatar_session"></div>
+                    <img src="../../public/images/avatar/ddd.png" alt="">
+            </div>
+        </header>
+        <section class="container-login">
+            <h2 class="title">Iniciar sesión</h2>
+            <button class="btn-log-facebook btn"> <a href="https://facebook.com">Inicia sesión con Facebook</a> </button>
+            <button class="btn-log-google btn">Inicia sesión con Google</button>
+            <form class="container-form" action="/users/login" method="POST" id="form">
+                <div class="input-container">
+                    <input class="input-log" type="email" class="input-style" id ="email" name="email"  placeholder="Ingrese su email">
+                    <span class="error" id="emailErrors" style="color: red;"></span>
+
+                    <input class="input-log" type="password" name="pass" id ="pass" placeholder="Ingrese su contraseña">
+                    <span id="passErrors" style="color: red;"></span>
+                    
+                </div>
+                
+                <div class="check-remember">
+                    <label for="remember">Recordar<input type="checkbox" name="remember" id="remember"></label>
+                </div>
+                <button type="submit" class="btn btn-log">Ingresar</button>
+                <span class="error" id="submitErrors" style="color: red;"></span>
+                <p class="link_pass-recover"><a href="">¿Olvidaste tu contraseña?</a></p>
+                <p>¿Aún no tienes cuenta en BrainHub?</p>
+                <button class="btn-register btn"> <a href="/users/register">Registrate</a></button>
+            </form>
+        </section>
+        <footer>
+            <div class="container__footer">
+                <div class="article_footer">
+                    <div class="footer-logo">
+                        <img src="../../public/images/logo-brainhub.jpg" alt="logo BrainHub">
+                    </div>
+                </div>
+                <div class="article__footer">
+                    <div class="somos_Brainhub">
+                        <p id="brainhub-about">Somos BrainHub Training, una institución online que se dedica a la enseñanza no convencional. Nos especializamos en la formación de lenguajes tanto clásicos como de tecnología.</p>
+                    </div>
+                </div>
+                <div class="article__footer">
+                    <h2>Enlaces de ayuda</h2>
+                    <a href="">Política de privacidad</a>
+                    <a href="">Términos y condiciones</a>
+                    <a href="">Políticas de cookies</a>
+                    <a href="">Atención al cliente</a>
+                </div>
+                <div class="article__footer">
+                    <h2>Cursos</h2>
+                    <a href="">Idiomas</a>
+                    <a href="">Diseño Web</a>
+                    <a href="">Programación</a>
+                    <a href="">Próximos cursos</a>
+                </div>
+                <div class="article__footer">
+                    <h2>Redes Sociales</h2>
+                    <a href=""> <i class="fab fa-facebook-square"></i> Facebook</a>
+                    <a href=""><i class="fab fa-twitter-square"></i> Twitter</a>
+                    <a href=""><i class="fab fa-linkedin"></i> Linkedin</a>
+                    <a href=""><i class="fab fa-instagram-square"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <hr>
+                <p>Marca Registrada © 2022 <b>BrainHub Training</b></p>
+            </div>
+        </footer>
+    </body>
+</html>
